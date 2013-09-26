@@ -11,4 +11,6 @@ describe Owner do
   it { should_not have_valid(:email).when(nil, " ", "tom####gmail.com")}
 
   it { should     have_valid(:company).when("", "Google", nil)}
+
+  it { should have_many :housings }
 end

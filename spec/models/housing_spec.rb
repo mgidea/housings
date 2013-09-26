@@ -12,4 +12,8 @@ describe Housing do
 
   it { should     have_valid(:zip_code).when("01234", "56789")}
   it { should_not have_valid(:zip_code).when(nil, " ")}
+
+  it { should     have_valid(:owner).when(Owner.new) }
+  it { should belong_to :owner}
+
 end

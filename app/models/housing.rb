@@ -4,7 +4,8 @@ class Housing < ActiveRecord::Base
     "MA","MI","MN","MS","MO","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI",
     "WY"
 ]
-
+  belongs_to :owner,
+    inverse_of: :housings
   validates_presence_of :address
   validates_presence_of :city
   validates_presence_of :state
