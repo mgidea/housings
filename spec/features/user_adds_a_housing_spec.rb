@@ -29,7 +29,6 @@ feature "user adds a new Housing structure", %Q{
     click_button "Record"
     expect(page).to have_content("Your building was successfully recorded")
     expect(Housing.count).to eql(prev_count + 1)
-    expect(page).to eql(new_housing_path)
   end
 
   scenario "specify invalid info" do
