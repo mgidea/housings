@@ -31,4 +31,11 @@ feature "user adds a new Housing structure", %Q{
     expect(Housing.count).to eql(prev_count + 1)
   end
 
+  scenario "specify invalid info" do
+    prev_count = Housing.count
+    visit new_housing_path
+    click_button "Record"
+    expect(page).to have_content("can't be left blank")
+    expect(Housing.count).to eql(prev_count)
+  end
 end
