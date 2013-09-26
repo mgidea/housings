@@ -8,7 +8,7 @@ class Housing < ActiveRecord::Base
   validates_presence_of :address
   validates_presence_of :city
   validates_presence_of :state
-  validates_inclusion_of :state, in: US_STATES
+  validates_inclusion_of :state, in: US_STATES, message: "is not an abbreviated US State"
   validates_presence_of :zip_code
   validates_numericality_of :zip_code
 end
